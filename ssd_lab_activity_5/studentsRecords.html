@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Table</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+
+			h1 {
+				font-size: 40px;
+			}
+			html {
+				font-size: 62.5%;
+			}
+			body {
+				font-family: "Montserrat", sans-serif;
+				line-height: 1.7;
+				background-color: rgba(7, 94, 94, 0.384);
+			}
+			.main {
+				position: absolute;
+				text-align: center;
+
+				top: 50%;
+				left: 50%;
+
+				transform: translate(-50%, -50%);
+			}
+			input {
+				font-size: 20px;
+
+				margin-bottom: 15px;
+			}
+			button {
+				font-size: 20px;
+
+				margin-bottom: 15px;
+				margin-top: 15px;
+			}
+
+			th,
+			td {
+				border: 1px solid;
+			}
+			table {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function add() {
+				var rollno = document.getElementById("rollno").value;
+				var nameval = document.getElementById("name").value;
+				var bs = document.getElementById("content").getElementsByTagName("tbody")[0];
+				var tuple = bs.insertRow();
+				var roll = tuple.insertCell(0);
+				var name = tuple.insertCell(1);
+				roll.innerHTML = rollno;
+				name.innerHTML = nameval;
+
+				bs.appendChild(tuple);
+				document.getElementById("rollno").value = "";
+				document.getElementById("name").value = "";
+			}
+			function del() {
+				var bs = document.getElementById("content").getElementsByTagName("tbody")[0];
+				bs.deleteRow(-1);
+			}
+		</script>
+		<div class="main">
+			<h1>Student Records</h1>
+			<input type="text" placeholder="Roll No" id="rollno" />
+			<input type="text" placeholder="Name" id="name" />
+			<button onclick="add()">Add New</button>
+
+			<div class="entry">
+				<table id="content" border="0">
+					<thead>
+						<tr>
+							<th class="roll">Roll No</th>
+							<th class="roll">Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+				<button onclick="del()">Delete Entry</button>
+			</div>
+		</div>
+	</body>
+</html>
