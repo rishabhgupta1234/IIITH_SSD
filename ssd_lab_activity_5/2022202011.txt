@@ -1,0 +1,69 @@
+
+
+Private variables-
+
+Private variables are used when we don't want to provide access to the attributes of the object to the 
+outside world. It should be only accessed by that particular object.
+In the below example Pin is private as it should only be accessed by objects to which PIN belong and not
+by another object.
+
+
+Public variables-
+
+Public variables are used when we don't want to hide them from other objects and can access directly 
+without using class methods.
+In the below example Bankname is public,so no need to hide it from other objects.
+
+
+Static variables-
+
+Static variables are those which belong to the class, not to the object.Only one copied is created and shared by all
+other objects.
+In the below example countCustomers is a static variable that gives information about the number of 
+account holders banks have currently.
+
+
+Privilege variables-
+
+Privilege variables are those which can be accessed by some other object but not by all.
+In the case of a Bank, the Joint Account holders can also withdraw money as they have access to the account
+which other account holder also holds.
+
+
+Example code to show working of above variables--------
+
+class AccountHolder{
+ 
+#pin=1234;// private variable
+#bankbalance=1000;
+bankName="State Bank of India"; // public variable
+static countCustomers=0; // static variable
+
+
+constructor(){
+AccountHolder.countCustomers++;
+}
+setPin(){
+this.#pin=4321;
+}
+
+get Pin(){
+return this.#pin;
+} 
+}
+
+const holder1=new AccountHolder();
+
+holder1.setPin();
+console.log(holder1.Pin);
+console.log(holder1.bankName);
+
+const holder2=new AccountHolder();
+const holder3=new AccountHolder();
+
+console.log(AccountHolder.countCustomers);// total number of customers
+
+
+
+
+ 

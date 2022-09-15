@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SSDLab6</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<h1>Team Form</h1>
+		<div class="form">
+			<form>
+				<label for="manager">Manager Name</label>
+				<input type="text" id="manager" name="manager" required />
+				<br />
+				<label for="email">Group Email</label>
+				<input type="email" id="email" name="email" required /><br />
+				<label for="username">Server Username</label>
+				<input
+					typ="text"
+					id="username"
+					name="username"
+					pattern="(?=.*\d)(?=.*[A-Z]).{2,}"
+					title="Invalid Username"
+					required
+				/><br />
+				<label for="password">Server Password</label>
+				<input type="password" id="password" required /><br />
+				<label for="confirm_password">Confirm Password</label>
+
+				<input type="password" id="confirm_password" required onkeyup="validatePassword()" /><br />
+				<label for="teamlead">Team Lead</label>
+				<select name="teamleadname" id="teamlead">
+					<option value="Point-Break">George</option>
+					<option value="Point-Break">Harry</option>
+					<option value="Point-Break">Asha</option>
+					<option value="Point-Break">Ramesh</option>
+				</select>
+				<br />
+				<br />
+				<label for="teammember">Team Members</label>
+				<br />
+				<br />
+				<div class="myparent">
+					<div
+						class="dropTargetDiv"
+						ondragover="dragOverHandler(event)"
+						ondrop="dropHandler(event)"
+					>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="ujjwal">Rishabh</p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="month">MyFriend</p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="bluesky">octobersky</p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="priyank">Priyanka</p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="priya">priyaramani</p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="diti">Aditya</p>
+					</div>
+
+					<div
+						class="dropTargetDiv"
+						ondragover="dragOverHandler(event)"
+						ondrop="dropHandler(event)"
+					>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="ujjwal"></p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="month"></p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="bluesky"></p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="priyank"></p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="priya"></p>
+						<p ondragstart="dragStartHandler(event)" draggable="true" id="diti"></p>
+					</div>
+				</div>
+
+				<!-- <li class="submit">
+					<input type="submit" name="submit" value="Submit" onclick="finalmsg()" />
+					<!-- ValidateEmail(document.form1.text1); 
+				</li> -->
+				<button type="submit" class="submitbtn" onclick="finalmsg()">Submit</button>
+			</form>
+		</div>
+		<button onclick="myFunction()">Change to different mode</button>
+		<br />
+		<br />
+	</body>
+</html>
